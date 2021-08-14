@@ -72,11 +72,11 @@ const Home = () => {
 				<input
 					type="text"
 					placeholder="Search for a country..."
-					className="pl-10 p-2 shadow-md rounded-md md:w-1/3 dark:bg-gray-700"
+					className="pl-10 p-2 shadow-md rounded-md md:w-1/3 dark:bg-gray-700 focus:outline-none "
 					onChange={handleSearchQuery}
 				/>
 				<select
-					className="ml-auto my-2 p-2 shadow-md rounded-md font-medium dark:bg-gray-700"
+					className="ml-auto my-2 p-2 shadow-md rounded-md font-medium dark:bg-gray-700 focus:outline-none "
 					onChange={e => {
 						filterByRegion(e.target.value);
 					}}>
@@ -92,7 +92,7 @@ const Home = () => {
 			<div className="container grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 px-20">
 				{countries.length > 0
 					? countries.map((country, index) => (
-							<Link to={{ pathname: 'details', state: 'country' }} key={index}>
+							<Link to={{ pathname: 'details', state: country }} key={index}>
 								<CountryCard
 									title={country.name}
 									image_url={country.flag}
