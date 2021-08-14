@@ -6,7 +6,7 @@ const Home = () => {
 	const [countries, setCountries] = useState([]);
 	const [mode, setMode] = useState(true);
 	const [toggleButton, setToggleButton] = useState(
-		'<i class="fa fa-sun-o" aria-hidden="true"></i> Light Mode'
+		'<i class="fas fa-sun"></i> Light Mode'
 	);
 
 	useEffect(() => {
