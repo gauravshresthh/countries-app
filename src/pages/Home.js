@@ -39,7 +39,7 @@ const Home = () => {
 		}
 		const res = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
 		const data = await res.json();
-		setCountries(data);
+		await setCountries(data);
 	};
 
 	const handleSearchQuery = e => {
@@ -48,9 +48,11 @@ const Home = () => {
 
 	const filterByRegion = async region => {
 		if (region === '') return;
-		const res = await fetch(`https://restcountries.eu/rest/v2/${region}`);
+		const res = await fetch(
+			`https://restcountries.eu/rest/v2/region/${region}`
+		);
 		const data = await res.json();
-		setCountries(data);
+		await setCountries(data);
 	};
 
 	return (
@@ -78,7 +80,7 @@ const Home = () => {
 					onChange={e => {
 						filterByRegion(e.target.value);
 					}}>
-					<option>Filter by Region</option>
+					<option value="">Filter by Region</option>
 					<option value="africa">Africa</option>
 					<option value="america">America</option>
 					<option value="asia">Asia</option>
