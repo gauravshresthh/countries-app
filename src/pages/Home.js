@@ -59,7 +59,10 @@ const Home = () => {
 		<div className="bg-gray-100 text-green-500 dark:bg-gray-800 dark:text-white">
 			<div className=" shadow-md py-6  bg-white dark:bg-gray-900 dark:text-white mb-16">
 				<div className="flex container px-20">
-					<h1 className="font-bold text-xl">Countries App</h1>
+					<h1 className="font-bold text-xl">
+						<i className="fas fa-flag-checkered"></i> {'  '}
+						Countries App
+					</h1>
 					<div className="ml-auto font-medium text-gray-600 dark:text-white">
 						<button
 							onClick={() => toggleDarkMode()}
